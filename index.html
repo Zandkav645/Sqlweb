@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SQL Injection Test Simulator</title>
+    <title>SMPN 2 Kotapontianak - SQL Injection Test Simulator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             box-sizing: border-box;
@@ -36,10 +37,42 @@
             border-bottom: 2px solid #eee;
         }
         
+        .school-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .school-logo {
+            width: 100px;
+            height: 100px;
+            background-color: #1a2a6c;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        
+        .school-info {
+            text-align: left;
+        }
+        
         h1 {
             color: #2c3e50;
             margin-bottom: 10px;
-            font-size: 2.5rem;
+            font-size: 2.2rem;
+        }
+        
+        .school-url {
+            color: #3498db;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
         }
         
         .description {
@@ -275,6 +308,33 @@
             border-radius: 8px;
         }
         
+        .news-section {
+            margin-top: 30px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .news-section h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        
+        .news-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+        }
+        
+        .news-item h3 {
+            color: #3498db;
+            margin-bottom: 10px;
+        }
+        
         @media (max-width: 768px) {
             .panels {
                 flex-direction: column;
@@ -287,13 +347,29 @@
             .content-display {
                 grid-template-columns: 1fr;
             }
+            
+            .school-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .school-logo {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <h1><i class="fas fa-database"></i> SQL Injection Test Simulator</h1>
+            <div class="school-header">
+                <div class="school-logo">S2</div>
+                <div class="school-info">
+                    <h1>SMP NEGERI 2 KOTAPONTIANAK</h1>
+                    <div class="school-url">smpn2kotaptk.sch.id</div>
+                </div>
+            </div>
             <p class="description">Simulator untuk tujuan edukasi tentang kerentanan SQL Injection</p>
             <div class="warning">
                 <strong>PERINGATAN:</strong> Ini hanya simulator untuk tujuan edukasi. Jangan mencoba teknik ini pada website tanpa izin pemiliknya. Aktivitas ilegal dapat dikenakan sanksi hukum.
@@ -306,7 +382,7 @@
                 
                 <div class="form-group">
                     <label for="target-url">URL Target:</label>
-                    <input type="url" id="target-url" placeholder="https://contoh.com/login.php">
+                    <input type="url" id="target-url" placeholder="https://smpn2kotaptk.sch.id/login.php">
                 </div>
                 
                 <div class="form-group">
@@ -366,6 +442,20 @@
             </div>
         </div>
         
+        <div class="news-section">
+            <h2><i class="fas fa-newspaper"></i> Berita Sekolah</h2>
+            
+            <div class="news-item">
+                <h3>PENGUATAN KEPADA PANITIA SPMB SMPN 2 KOTA PONTIANAK OLEH KEPALA DINAS</h3>
+                <p>Kepala Dinas Pendidikan memberikan penguatan kepada panitia SPMB SMPN 2 Kota Pontianak dalam rangka persiapan penerimaan peserta didik baru tahun ajaran 2023/2024.</p>
+            </div>
+            
+            <div class="news-item">
+                <h3>WORKSHOP PENYUSUNAN SOAL HIGHER ORDER THINKING SKILLS (HOTS)</h3>
+                <p>SMPN 2 Kota Pontianak menyelenggarakan workshop penyusunan soal HOTS bagi guru-guru untuk meningkatkan kualitas pembelajaran dan evaluasi.</p>
+            </div>
+        </div>
+        
         <div class="user-content">
             <h2><i class="fas fa-image"></i> Konten Pengguna</h2>
             <p>Gambar dan teks yang diunggah akan muncul di bawah ini:</p>
@@ -382,7 +472,7 @@
         </div>
         
         <div class="database-view">
-            <h2><i class="fas fa-table"></i> Data Simulasi Database</h2>
+            <h2><i class="fas fa-table"></i> Data Simulasi Database Sekolah</h2>
             
             <h3>Tabel Users</h3>
             <table class="data-table">
@@ -391,59 +481,59 @@
                         <th>ID</th>
                         <th>Username</th>
                         <th>Email</th>
-                        <th>Password Hash</th>
+                        <th>Level</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>1</td>
                         <td>admin</td>
-                        <td>admin@example.com</td>
-                        <td>5f4dcc3b5aa765d61d8327deb882cf99</td>
+                        <td>admin@smpn2kotaptk.sch.id</td>
+                        <td>Administrator</td>
                     </tr>
                     <tr>
                         <td>2</td>
-                        <td>john_doe</td>
-                        <td>john@example.com</td>
-                        <td>5f4dcc3b5aa765d61d8327deb882cf99</td>
+                        <td>guru1</td>
+                        <td>guru1@smpn2kotaptk.sch.id</td>
+                        <td>Guru</td>
                     </tr>
                     <tr>
                         <td>3</td>
-                        <td>jane_smith</td>
-                        <td>jane@example.com</td>
-                        <td>5f4dcc3b5aa765d61d8327deb882cf99</td>
+                        <td>siswa1</td>
+                        <td>siswa1@smpn2kotaptk.sch.id</td>
+                        <td>Siswa</td>
                     </tr>
                 </tbody>
             </table>
             
-            <h3>Tabel Products</h3>
+            <h3>Tabel Nilai Siswa</h3>
             <table class="data-table">
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Nama Produk</th>
-                        <th>Harga</th>
-                        <th>Stok</th>
+                        <th>Nama Siswa</th>
+                        <th>Mata Pelajaran</th>
+                        <th>Nilai</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>1</td>
-                        <td>Laptop Gaming</td>
-                        <td>Rp 15.000.000</td>
-                        <td>12</td>
+                        <td>Ahmad Santoso</td>
+                        <td>Matematika</td>
+                        <td>85</td>
                     </tr>
                     <tr>
                         <td>2</td>
-                        <td>Smartphone</td>
-                        <td>Rp 5.000.000</td>
-                        <td>25</td>
+                        <td>Budi Raharjo</td>
+                        <td>IPA</td>
+                        <td>90</td>
                     </tr>
                     <tr>
                         <td>3</td>
-                        <td>Tablet</td>
-                        <td>Rp 7.500.000</td>
-                        <td>8</td>
+                        <td>Citra Lestari</td>
+                        <td>Bahasa Indonesia</td>
+                        <td>88</td>
                     </tr>
                 </tbody>
             </table>
@@ -480,7 +570,7 @@
                 simulationOutput.textContent = `-- Simulasi SQL Injection pada: ${targetUrl}\n`
                     + `-- Menggunakan teknik: Union-based SQL Injection\n\n`
                     + `SELECT * FROM users WHERE username = '' UNION SELECT 1,2,3,4--';\n`
-                    + `SELECT * FROM products WHERE id = -1 UNION SELECT 1,table_name,3,4 FROM information_schema.tables--;\n`
+                    + `SELECT * FROM nilai_siswa WHERE id = -1 UNION SELECT 1,table_name,3,4 FROM information_schema.tables--;\n`
                     + `-- Berhasil mengekstrak data: ${userText}\n`
                     + `-- Data berhasil disisipkan ke dalam database`;
                 
@@ -510,13 +600,11 @@
             });
             
             // Contoh URL target
-            targetUrlInput.value = 'https://website-target.com/login.php';
+            targetUrlInput.value = 'https://smpn2kotaptk.sch.id/login.php';
             
             // Contoh teks
-            userTextInput.value = 'Situs ini rentan terhadap SQL Injection!';
+            userTextInput.value = 'Situs ini rentan terhadap SQL Injection! Perlu dilakukan penguatan keamanan.';
         });
     </script>
-    
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </body>
 </html>
